@@ -1,0 +1,168 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: gray;
+    height: 100px;
+    z-index: 100;
+    position: relative;
+}
+
+header > section {
+    background-color: yellow;
+    width: 100%;
+    height: inherit;
+}
+
+header > section > section {
+    background-color: pink;
+    width: 80%;
+    margin: 0px auto;
+    height: inherit;
+}
+
+header > section > section > nav {
+    border: 1px solid red;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+
+header > section > section > nav > ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid purple;
+}
+
+header > section > section > nav > ul li {
+    padding: 0px;
+    margin: 0px;
+    height: inherit;
+    border: 1px solid green;
+}
+
+
+header > section > section > nav > ul:first-of-type {
+    height: inherit;
+    
+}
+header > section > section > nav > ul:first-of-type li {
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+/* ----------------------------------- */
+
+header > section > section > nav > ul:last-of-type {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: -500px;
+    z-index: -1;
+    
+}
+
+header > section > section > nav > ul:last-of-type li {
+    display: block;
+    height: initial;
+}
+
+header > section > section > nav > label {
+    width: 50px;
+    background-color: red;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header > section > section > nav > label > span {
+    background-color: white;
+    display: block;
+    height: 1px;
+    margin: 5px auto;
+    width: 70%;
+}
+
+/* ----------------------------------- */
+header > section > section > nav > #burger-state:not( :active ) + ul:last-of-type {
+    /* display: none; */
+}
+
+header > section > section > nav > #burger-state + ul:last-of-type {
+    background-color: orange;
+    top: -170%;
+    transition: top 1s;
+    visibility: visible;
+}
+/* ----------------------------------- */
+header > section > section > nav > #burger-state:checked + ul:last-of-type {
+    background-color: pink;
+    top: 100%; 
+    transition: top 1s;
+}
+/* ----------------------------------- */
+
+header > section > section > nav > #burger-state + ul:last-of-type:after {
+    /* content: ' x ';
+    color: red;
+    line-height: 100px; */
+}
+
+header > section > section > nav > ul:last-of-type {
+    visibility: hidden;
+}
+
+
+
+
+
+
+/* -------------------- */
+
+@media ( min-width: 768px ) {
+
+    
+
+
+    header > section > section > nav > label,
+    header > section > section > nav > #burger-state,
+    header > section > section > nav > #burger-state:checked {
+        display: none;
+        user-select: none;
+        outline: none;
+    }
+
+    body {
+        background-color: red;
+    }
+
+    header > section > section > nav > div {
+        display: none;
+    }
+    
+    header > section > section > nav > #burger-state:checked + ul:last-of-type,
+    header > section > section > nav > #burger-state + ul:last-of-type,
+    header > section > section > nav > ul:last-of-type {
+        position: relative;
+        width: initial;
+        left: 0px;
+        top: 0px;
+        z-index: 0 ;
+        height: inherit;
+        transition: none !important;
+    }
+
+    header > section > section > nav > ul:last-of-type li {
+        float: left;
+        height: inherit;
+        display: flex;
+        align-items: center;
+    }
+
+}

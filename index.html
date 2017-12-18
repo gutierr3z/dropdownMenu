@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DROPDOWN NAV</title>
+
+        <link href="./css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <section>
+                <section>
+
+                    <nav>
+
+                        <ul>
+                            <li>one</li>
+                            <li>two</li>
+                            <li>three</li>
+                        </ul>
+
+                        <input type="checkbox" id="burger-state">
+
+                        <ul id="nav">
+                            <li>un1</li>
+                            <li>deux1</li>
+                            <li>trois1</li>
+                            <li>un2</li>
+                            <li>deux2</li>
+                            <li>trois2</li>
+                            <li>un3</li>
+                            <li>deux3</li>
+                            <li>trois3</li>
+                        </ul>
+
+                        <label for="burger-state">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                        
+                    </nav>
+
+                </section>
+            </section>
+        </header>
+
+        <script>
+
+            var PLIABLE = PLIABLE || {};
+            PLIABLE.nav = ( function() {
+
+                var x = document.getElementById( 'x' );
+                var nav = document.getElementById( 'nav' );
+                var isOpen = false;
+
+                function _init() {
+                    x.addEventListener( 'click', function xx( e ) {
+                        e.preventDefault();
+
+                        if ( nav.className !== 'sub-open' ) {
+                            nav.setAttribute( 'class', 'sub-open' );
+                        } else {
+                            nav.classList.toggle( 'sub-close' );
+                        }
+                    });
+                }
+
+                return {
+                    init: _init
+                }
+            })();
+            
+            PLIABLE.nav.init();
+
+            
+        </script>
+    </body>
+</html>
